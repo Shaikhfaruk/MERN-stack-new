@@ -33,7 +33,7 @@ app.get("/about", middleware, (req, res) => {
 app.get("/contact", (req, res) => {
   res.send(`Hello world, I'm contact page`);
 });
-app.get("/login", (req, res) => {
+app.get("/signin", (req, res) => {
   res.send(`Hello world, I'm Login page`);
 });
 app.get("/register", (req, res) => {
