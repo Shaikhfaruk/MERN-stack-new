@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 
 // create a data base... when you get a link from mongodb you need to change myNewProject name and password
-dotenv.config({ path: "./config.env" });
+// dotenv.config({ path: "./config.env" });
+dotenv.config();
 
 // conn from conn.js start
 require("./db/conn");
