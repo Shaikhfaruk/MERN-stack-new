@@ -1,24 +1,19 @@
 const dotenv = require("dotenv");
-
-const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
 // create a data base... when you get a link from mongodb you need to change myNewProject name and password
-const DB =
-  "mongodb+srv://faruk:farukshaikh@cluster0.8zamo.mongodb.net/mern-learn?retryWrites=true&w=majority";
+dotenv.config({ path: "./config.env" });
 
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  })
-  .then(() => {
-    console.log("connection successfully");
-  })
-  .catch((err) => console.log("connection error"));
+// conn from conn.js start
+require("./db/conn");
+// const User = require("./model/userSchema");
+app.use(express.json());
+
+// we link the router files to make our route easy to use
+app.use(require("./router/auth"));
+
+const PORT = process.env.PORT;
 
 // Middelware for secure your useNewConnection
 
@@ -27,9 +22,10 @@ const middleware = (req, res, next) => {
   next();
 };
 
-app.get("/", (req, res) => {
-  res.send(`Hello world, I'm home page`);
-});
+// app.get("/", (req, res) => {
+//   res.send(`Hello world, I'm home page from App.js`);
+// });
+
 app.get("/about", middleware, (req, res) => {
   res.send(`Hello world, I'm about page`);
 });
@@ -43,6 +39,6 @@ app.get("/register", (req, res) => {
   res.send(`Hello world, I'm Register page`);
 });
 
-app.listen(3000, (err, res) => {
-  console.log("server listening on port 3000");
+app.listen(PORT, (err, res) => {
+  console.log(`server listening on port no ${PORT}`);
 });
