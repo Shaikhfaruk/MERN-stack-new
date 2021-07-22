@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
@@ -8,40 +9,6 @@ const User = require("../model/userSchema");
 router.get("/", (req, res) => {
   res.send(`Hello world, I'm home page from router js`);
 });
-
-// using promises above is
-
-// router.post("/register", async (req, res) => {
-//   const { name, email, phone, work, password, cpassword } = req.body;
-
-//   if (!name || !email || !phone || !work || !password || !cpassword) {
-//     return res.status(422).json({ error: "Invalid username or email" });
-//   }
-
-//   User.findOne({ email: email })
-//     .then((userExist) => {
-//       if (userExist) {
-//         return res.status(422).json({ error: "Email already exists" });
-//       }
-//       const user = new User({ name, email, phone, work, password, cpassword });
-
-//       user
-//         .save()
-//         .then(() => {
-//           res.status(201).json({ message: "User saved successfully" });
-//         })
-//         .catch((err) => res.status(500).json({ error: "Failed to save user" }));
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-
-//   // console.log(req.body);
-//   // console.log(name);
-//   // console.log(email);
-//   // res.json({ message: req.body });
-//   // res.send("mera registered ho rha hai");
-// });
 
 // using async ka upyog b kr skte hai🙂
 
@@ -86,13 +53,22 @@ router.post("/signin", async (req, res) => {
     }
     const userLogin = await User.findOne({ email: email });
 
-    console.log(userLogin);
-    const isMatch = await bcrypt.compare(password, userLogin.password);
+    // console.log(userLogin);
 
-    if (!isMatch) {
-      res.status(400).json({ error: "Invalid credentials" });
+    if (userLogin) {
+      const isMatch = await bcrypt.compare(password, userLogin.password);
+
+      const token = await userLogin.generateAuthToken();
+
+      console.log(token);
+
+      if (!isMatch) {
+        res.status(400).json({ error: "Invalid credentials" });
+      } else {
+        res.json({ message: "User signin successfully" });
+      }
     } else {
-      res.json({ message: "User signin successfully" });
+      res.status(400).json({ error: "Invalid credentials" });
     }
   } catch (err) {
     console.log(err);
