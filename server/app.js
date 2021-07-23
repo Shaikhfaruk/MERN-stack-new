@@ -23,14 +23,11 @@ const middleware = (req, res, next) => {
   next();
 };
 
-// app.get("/", (req, res) => {
-//   res.send(`Hello world, I'm home page from App.js`);
-// });
-
 app.get("/about", middleware, (req, res) => {
   res.send(`Hello world, I'm about page`);
 });
 app.get("/contact", (req, res) => {
+  // res.cookie("Test", "faruk");
   res.send(`Hello world, I'm contact page`);
 });
 app.get("/signin", (req, res) => {
