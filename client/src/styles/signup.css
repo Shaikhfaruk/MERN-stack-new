@@ -14,6 +14,11 @@ svg {
 .signup-form {
   width: 45%;
 }
+.form-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
 .signup-image {
   display: flex;
   justify-content: space-around;
@@ -49,19 +54,6 @@ label {
   color: #f03d5f;
   font-weight: 600;
 }
-@media (max-width: 571px) {
-  .signup-image {
-    display: none;
-  }
-  .signup-form {
-    width: 90%;
-  }
-}
-@media (min-width: 571px) {
-  .signup-mobile-link {
-    display: none;
-  }
-}
 
 /* button styling */
 .form-button {
@@ -95,6 +87,10 @@ label {
   animation: form-button 1s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
 }
+textarea:focus,
+input:focus {
+  outline: none;
+}
 
 @-webkit-keyframes form-button {
   0% {
@@ -105,5 +101,18 @@ label {
 @keyframes form-button {
   0% {
     box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+@media (max-width: 571px) {
+  .signup-image {
+    display: none;
+  }
+  .signup-form {
+    width: 90%;
+  }
+}
+@media (min-width: 571px) {
+  .signup-mobile-link {
+    display: none;
   }
 }

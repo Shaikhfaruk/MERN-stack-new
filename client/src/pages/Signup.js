@@ -50,6 +50,8 @@ const Signup = () => {
                   id="phone"
                   autoComplete="off"
                   placeholder="Your Phone"
+                  min="7000000000"
+                  max="9999999999"
                 />
               </div>
 

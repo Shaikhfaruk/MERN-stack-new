@@ -1,3 +1,7 @@
+.navbar {
+  padding: 0.5rem;
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
