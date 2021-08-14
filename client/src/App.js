@@ -6,32 +6,34 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <>
-      <Navbar />
+      <Router>
+        <Navbar />
 
-      <Route exact path="/">
-        <Home />
-      </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      <Route exact path="/about">
-        <About />
-      </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
 
-      <Route exact path="/contact">
-        <Contact />
-      </Route>
+        <Route exact path="/contact">
+          <Contact />
+        </Route>
 
-      <Route exact path="/login">
-        <Login />
-      </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
 
-      <Route exact path="/signup">
-        <Signup />
-      </Route>
+        <Route exact path="/signup">
+          <Signup />
+        </Route>
+      </Router>
     </>
   );
 };
