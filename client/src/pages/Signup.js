@@ -20,7 +20,7 @@ const Signup = () => {
                   type="text"
                   name="name"
                   id="name"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Your Name"
                 />
               </div>
@@ -34,7 +34,7 @@ const Signup = () => {
                   type="email"
                   name="email"
                   id="email"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Your Email"
                 />
               </div>
@@ -48,7 +48,7 @@ const Signup = () => {
                   type="number"
                   name="phone"
                   id="phone"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Your Phone"
                 />
               </div>
@@ -62,7 +62,7 @@ const Signup = () => {
                   type="text"
                   name="work"
                   id="work"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Your Profession"
                 />
               </div>
@@ -76,7 +76,7 @@ const Signup = () => {
                   type="password"
                   name="password"
                   id="password"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Your Password"
                 />
               </div>
@@ -90,11 +90,11 @@ const Signup = () => {
                   type="password"
                   name="cpassword"
                   id="cpassword"
-                  autocomplete="off"
+                  autoComplete="off"
                   placeholder="Confirm Password"
                 />
               </div>
-              <div className="form-group form-button">
+              <div className=" form-button">
                 <input
                   type="submit"
                   name="signup"
@@ -103,6 +103,9 @@ const Signup = () => {
                   value="register"
                 />
               </div>
+              <Link to="/login" className="signup-mobile-link">
+                Already have an account ?
+              </Link>
             </form>
           </div>
           <div className="signup-image">
@@ -110,8 +113,7 @@ const Signup = () => {
               <img src={SignupPic} alt="signupImage" />
             </figure>
             <Link to="/login" className="signup-image-link">
-              {" "}
-              Already have an account ?{" "}
+              Already have an account ?
             </Link>
           </div>
         </div>

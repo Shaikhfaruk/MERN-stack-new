@@ -43,3 +43,67 @@ label {
   padding: 0 10px;
   width: 11%;
 }
+.signup-mobile-link,
+.signup-image-link {
+  text-decoration: none;
+  color: #f03d5f;
+  font-weight: 600;
+}
+@media (max-width: 571px) {
+  .signup-image {
+    display: none;
+  }
+  .signup-form {
+    width: 90%;
+  }
+}
+@media (min-width: 571px) {
+  .signup-mobile-link {
+    display: none;
+  }
+}
+
+/* button styling */
+.form-button {
+  margin: 20px 0;
+}
+
+.form-button input {
+  background: none;
+  color: var(--color);
+  transition: 0.25s;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 7px;
+  height: 7vh;
+  border: 1px solid var(--color);
+  text-transform: uppercase;
+}
+.form-button input:hover,
+.form-button input:focus {
+  border-color: var(--hover);
+  color: var(--hover);
+}
+.form-button input {
+  --color: #ef6eae;
+  --hover: #ef8f6e;
+}
+
+.form-button input:hover,
+.form-button input:focus {
+  -webkit-animation: form-button 1s;
+  animation: form-button 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes form-button {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes form-button {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
