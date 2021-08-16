@@ -7,12 +7,17 @@ svg {
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 75vh;
+  box-shadow: 2px 2px 28px -3px #ef6eae;
+  border-radius: 11px;
 }
 .signup-form {
+  display: flex;
   width: 45%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .form-title {
   font-weight: 700;
@@ -27,8 +32,7 @@ svg {
   align-content: center;
 }
 .form-group {
-  margin: 12px 0;
-
+  margin: 7px 0;
   border: solid 1px #eee;
   border-radius: 6px;
   padding: 5px;
