@@ -1,10 +1,13 @@
 import React from "react";
+import "../styles/home.css";
 
 const Home = () => {
   return (
     <>
-      <p className="pt-4">Welcome</p>
-      <h1>we are learning mern stack</h1>
+      <div className="home-container">
+        <p className="pt-4">Welcome</p>
+        <h1>We are learning MERN stack</h1>
+      </div>
     </>
   );
 };

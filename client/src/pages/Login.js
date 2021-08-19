@@ -5,7 +5,7 @@ import login from "../images/Login1.svg";
 const Login = () => {
   return (
     <>
-      <section className="signup">
+      <section className="login">
         <div className="container mt-5">
           <div className="signup-image">
             <figure>

@@ -24,6 +24,7 @@
 }
 .contact_form .container_contact {
   height: auto;
+  padding: 0;
 }
 .sub_contact_form {
   display: grid;
@@ -35,7 +36,12 @@
   padding: 6px 10px;
   border-radius: 6px;
 }
-
+.contact_form_title {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #15063b;
+}
 textarea:focus,
 input:focus {
   outline: none;
@@ -61,6 +67,9 @@ input:focus {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 20px;
+  }
+  .contact_form {
+    margin: 1rem;
   }
 }
 @media (max-width: 523px) {

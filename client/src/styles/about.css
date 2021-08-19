@@ -1,0 +1,28 @@
+.emp-profile {
+  margin-top: 2rem;
+}
+
+.about-form {
+  width: 100%;
+}
+.nav-link.active {
+  width: 100%;
+  border-bottom: 5px solid #5bc0eb;
+}
+.profile-edit-button {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #d2e2ff;
+}
+.profile-edit-button:hover {
+  background-color: #ef6eae;
+  transition: all 0.5ms;
+  cursor: pointer;
+}
+.about-img {
+  vertical-align: middle;
+  height: 150px;
+  width: 150px;
+}
