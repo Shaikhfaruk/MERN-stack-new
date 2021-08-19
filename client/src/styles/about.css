@@ -19,11 +19,12 @@
   background-color: #dae7ff;
   color: #ef6eae;
 }
-.profile-edit-button:hover {
+.profile-edit-button:hover,
+a:hover {
   background-color: #ef6eae;
   transition: all 0.5ms;
   cursor: pointer;
-  color: #fff;
+  color: #fff !important;
 }
 .about-img {
   vertical-align: middle;
