@@ -1,0 +1,37 @@
+.errorImg {
+  width: 100%;
+  height: auto;
+  background-position: center;
+}
+.errorText {
+  font-size: 5rem;
+}
+.imageDiv {
+  position: absolute;
+  top: 0rem;
+  z-index: -999;
+}
+.page_404 {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contant_box_404 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 17rem;
+}
+@media (max-width: 779px) {
+  .errorText {
+    font-size: 3rem;
+  }
+  .errorImg {
+    height: 500px;
+    width: auto;
+  }
+}

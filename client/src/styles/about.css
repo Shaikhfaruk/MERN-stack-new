@@ -1,5 +1,7 @@
 .emp-profile {
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: auto;
 }
 
 .about-form {
@@ -14,15 +16,27 @@
   border: 1px solid #eee;
   padding: 5px;
   border-radius: 5px;
-  background-color: #d2e2ff;
+  background-color: #dae7ff;
+  color: #ef6eae;
 }
 .profile-edit-button:hover {
   background-color: #ef6eae;
   transition: all 0.5ms;
   cursor: pointer;
+  color: #fff;
 }
 .about-img {
   vertical-align: middle;
-  height: 150px;
-  width: 150px;
+  width: 70%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: #5eb1f5;
+  font-weight: 500;
+}
+@media (max-width: 798px) {
+  .about-img {
+    width: 100%;
+  }
 }

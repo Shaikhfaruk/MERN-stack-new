@@ -54,10 +54,12 @@ input:focus {
 }
 .contact_submit_button {
   border: 1px solid #eee;
+  color: #ef6eae;
 }
 .contact_submit_button:hover {
   background-color: #ef6eae;
   transition: all 0.5ms;
+  color: #fff;
 }
 /*============= media query ===============*/
 

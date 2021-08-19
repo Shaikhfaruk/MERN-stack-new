@@ -45,10 +45,151 @@ const About = () => {
             </div>
             <div className="col-md-2">
               <input
-                type="text"
+                type="submit"
                 className="profile-edit-button"
                 value="Edit Profile"
+                name="btnAddMore"
               />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <div className="profile-work">
+                <p>WORK LINK</p>
+                <a
+                  href="https://project-management-jet.vercel.app/"
+                  target="_faruk">
+                  Project Management
+                </a>{" "}
+                <br />
+                <a href="https://faruk-portfolio.vercel.app/" target="_faruk">
+                  My Portfolio
+                </a>{" "}
+                <br />
+                <a
+                  href="https://github.com/Shaikhfaruk/Materials"
+                  target="_faruk">
+                  Project Materials
+                </a>{" "}
+                <br />
+                <a
+                  href="https://github.com/Shaikhfaruk/MERN-stack-new"
+                  target="_faruk">
+                  MERN Project
+                </a>{" "}
+                <br />
+                <a href="https://daiet-app.vercel.app/" target="_faruk">
+                  Daietto App
+                </a>{" "}
+                <br />
+                <a
+                  href="https://github.com/Shaikhfaruk/react-in-onevideo"
+                  target="_faruk">
+                  Complate React
+                </a>{" "}
+                <br />
+                <a href="https://instagram.com/shaikh.faruk_" target="_faruk">
+                  Instagram
+                </a>{" "}
+                <br />
+                <a href="https://figma.com/@FarukShaikh">Figma</a>{" "}
+              </div>
+            </div>
+            <div className="col-md-8 pl-5 about-info">
+              <div className="tab-content profilr-tab" id="myTabContent">
+                <div
+                  className="tab-pane fade show active"
+                  id="home"
+                  role="tabpanel"
+                  aria-labelledby="home-tab">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <label>UserID</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>786786786</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Name</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Faruk Shaikh</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Email</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>sfaruk1137@gmail.com</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Phone</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>9561611828</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Profession</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Web Developer and Designer</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="tap-pane fade"
+                  id="profile"
+                  role="tabpanel"
+                  aria-labelledby="profile-tab">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <label>Experience</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Expert</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Hourly Rate</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>10$</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Total Projects</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>210</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>English Level</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>Good</p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label>Availability</label>
+                    </div>
+                    <div className="col-md-6">
+                      <p>6 Months</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </form>
