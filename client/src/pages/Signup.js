@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import SignupPic from "../images/SignupPic.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../styles/signup.css";
 
 const Signup = () => {
+  const history = useHistory();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -21,12 +23,45 @@ const Signup = () => {
     setUser({ ...user, [name]: value });
   };
 
+  const PostData = async (e) => {
+    e.preventDefault();
+
+    const { name, email, phone, work, password, cpassword } = user;
+
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        work,
+        password,
+        cpassword,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (res.status === 422 || !data) {
+      window.alert("Invalid data");
+      console.log("Invalid data");
+    } else {
+      window.alert("Registration Successful");
+      console.log("Registration Successful");
+
+      history.pushState("./login");
+    }
+  };
+
   return (
     <>
       <div className="container mt-5">
         <div className="signup-form">
           <h2 className="form-title">Sign Up</h2>
-          <form className="register-form" id="register-form">
+          <form method="POST" className="register-form" id="register-form">
             <div className="form-group">
               <label htmlFor="name">
                 <i className="zmdi zmdi-account material-icons-name"></i>
@@ -131,6 +166,7 @@ const Signup = () => {
                 id="signup"
                 className="form-submit"
                 value="register"
+                onclick={PostData}
               />
             </div>
             <Link to="/login" className="signup-mobile-link">
