@@ -52,7 +52,7 @@ const Signup = () => {
       window.alert("Registration Successful");
       console.log("Registration Successful");
 
-      history.pushState("./login");
+      history.push("./login");
     }
   };
 
@@ -166,7 +166,7 @@ const Signup = () => {
                 id="signup"
                 className="form-submit"
                 value="register"
-                onclick={PostData}
+                onClick={PostData}
               />
             </div>
             <Link to="/login" className="signup-mobile-link">
