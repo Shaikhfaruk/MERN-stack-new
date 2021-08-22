@@ -1,8 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import login from "../images/Login1.svg";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+    const res = await fetch("/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+    const data = await res.json(); //"await" just added you will remove it
+
+    if (res.status === 400 || !data) {
+      window.alert("Invalid Credentials");
+    } else {
+      window.alert("Login Successful");
+      history.push("/");
+    }
+  };
+
   return (
     <>
       <section className="login">
@@ -17,7 +43,7 @@ const Login = () => {
           </div>
           <div className="signup-form">
             <h2 className="form-title">Login</h2>
-            <form className="register-form" id="register-form">
+            <form method="POST" className="register-form" id="register-form">
               <div className="form-group">
                 <label htmlFor="email">
                   <i className="zmdi zmdi-email material-icons-name"></i>
@@ -28,6 +54,10 @@ const Login = () => {
                   name="email"
                   id="email"
                   autoComplete="off"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  value={email}
                   placeholder="Your Email"
                 />
               </div>
@@ -42,6 +72,10 @@ const Login = () => {
                   name="password"
                   id="password"
                   autoComplete="off"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                  value={password}
                   placeholder="Your Password"
                 />
               </div>
@@ -53,6 +87,7 @@ const Login = () => {
                   id="signup"
                   className="form-submit"
                   value="log in"
+                  onClick={loginUser}
                 />
               </div>
               <Link to="/login" className="signup-mobile-link">
