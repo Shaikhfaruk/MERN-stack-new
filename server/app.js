@@ -18,14 +18,15 @@ const PORT = process.env.PORT;
 
 // Middelware for secure your useNewConnection
 
-const middleware = (req, res, next) => {
-  console.log("middleware okk");
-  next();
-};
+// const middleware = (req, res, next) => {
+//   console.log("middleware okk");
+//   next();
+// };
 
-app.get("/about", middleware, (req, res) => {
-  res.send(`Hello world, I'm about page`);
-});
+// app.get("/about", middleware, (req, res) => {
+//   res.send(`Hello world, I'm about page`);
+// });
+
 app.get("/contact", (req, res) => {
   // res.cookie("Test", "faruk");
   res.send(`Hello world, I'm contact page`);
